@@ -1,0 +1,223 @@
+@font-face {
+  font-family: 'Geometric 706 Bold';
+  src: url('../../assets/fonts/geometric706.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Tanseek modern pro arabic';
+  src: url('../../assets/fonts/tanseek-modern-pro-arabic.ttf') format('truetype');
+}
+
+@font-face {font-family: "WeissenhofGrotesk-Medium";
+  src: url("../../assets/fonts/WeissenhofGrotesk-Medium/2e7b2b42ad85941f9303d32e0e3f1888.eot"); /* IE9*/
+  src: url("../../assets/fonts/WeissenhofGrotesk-Medium/2e7b2b42ad85941f9303d32e0e3f1888.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../../assets/fonts/WeissenhofGrotesk-Medium/2e7b2b42ad85941f9303d32e0e3f1888.woff2") format("woff2"), /* chrome、firefox */
+  url("../../assets/fonts/WeissenhofGrotesk-Medium/2e7b2b42ad85941f9303d32e0e3f1888.woff") format("woff"), /* chrome、firefox */
+  url("../../assets/fonts/WeissenhofGrotesk-Medium/2e7b2b42ad85941f9303d32e0e3f1888.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../../assets/fonts/WeissenhofGrotesk-Medium/2e7b2b42ad85941f9303d32e0e3f1888.svg#WeissenhofGrotesk-Medium") format("svg"); /* iOS 4.1- */
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #F3F2F7;
+}
+
+#sidebar {
+  width: 325px;
+  height: 950px;
+  background-color: #FFFFFF;
+  box-shadow: 2px 0 10px #CCCCCC5E;
+  transition: all 500ms ease;
+
+  #header{
+    height: 16%;
+    width: 325px;
+
+    .title{
+      display: flex;
+      flex-direction: row;
+      margin-left: 50px;
+      padding-top: 35px;
+      transition: all 300ms;
+
+      h1{
+        font-family: "Geometric 706 Bold", sans-serif;
+        font-size: 45px;
+
+        span{
+          color: #20ba86;
+        }
+      }
+
+      #btn{
+        margin-top: 15px;
+        margin-left: 50px;
+        font-size: 40px;
+        transition: all 300ms ease;
+      }
+
+      #btn:hover{
+        color: #20ba86;
+        cursor: pointer;
+      }
+
+    }
+
+    h3{
+      font-family: "Tanseek modern pro arabic",sans-serif;
+      font-size: 25px;
+      font-weight: 300;
+      color: #babac0;
+      margin-left: 50px;
+      margin-top: 5px;
+    }
+  }
+
+  #aside{
+    height: 83%;
+
+    #nav-list{
+      margin-left: 50px;
+      margin-right: 50px;
+      list-style: none;
+
+      li{
+        width: 225px;
+        height: 50px;
+        line-height: 45px;
+        margin: 10px 0;
+
+
+        .link-name{
+          text-decoration: none;
+          display: block;
+          padding-left: 20px;
+          color: black;
+
+          .icons{
+            font-size: 22px;
+            transition: all 1000ms ease;
+          }
+
+          span{
+            padding-left: 20px;
+            font-family: "WeissenhofGrotesk-Medium",sans-serif;
+            font-size: 20px;
+            color: #747280;
+          }
+        }
+
+      }
+
+      li:hover{
+        background-color: #d9f3ea;
+        border-radius: 10px;
+        transition: all 300ms;
+
+        .link-name:hover{
+          color: #20ba86;
+          font-weight: 600;
+
+          span{
+            color: #20ba86;
+          }
+        }
+      }
+
+
+
+    }
+  }
+
+}
+
+#sidebar-mobile{
+  width: 75px;
+  height: 950px;
+  background-color: #FFFFFF;
+  box-shadow: 2px 0 10px #CCCCCC5E;
+  transition: all 1000ms ease;
+
+  #header{
+    height: 16%;
+    width: 100%;
+
+    .title{
+      width: 100%;
+      padding-top: 35px;
+
+      h1{
+        display: none;
+      }
+
+      #btn{
+        margin-top: 15px;
+        margin-left: 15px;
+        font-size: 40px;
+        transition: all 1000ms ease;
+      }
+
+      #btn:hover{
+        color: #20ba86;
+        cursor: pointer;
+      }
+
+    }
+
+    h3{
+      display: none;
+    }
+  }
+
+  #aside{
+    height: 83%;
+
+    #nav-list{
+      margin-left: 10px;
+      margin-right: 10px;
+      list-style: none;
+
+      li{
+        width: 55px;
+        height: 50px;
+        line-height: 50px;
+        margin: 10px 0;
+
+        .link-name{
+          text-decoration: none;
+          display: block;
+          padding-left: 12px;
+          padding-top: 6px;
+          color: black;
+
+          .icons{
+            font-size: 30px;
+            transition: all 1000ms ease;
+          }
+
+          span{
+            display: none;
+          }
+        }
+
+      }
+
+      li:hover{
+        background-color: #d9f3ea;
+        border-radius: 10px;
+        transition: all 300ms;
+
+        .link-name:hover{
+          color: #20ba86;
+        }
+      }
+
+
+
+    }
+  }
+}
