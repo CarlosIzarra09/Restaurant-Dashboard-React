@@ -1,16 +1,36 @@
-import React, {useState} from 'react'
-import './sidebar.css'
+import React, {useEffect} from 'react'
+import './base-sidebar.scss'
+import {useHandleSidebar} from "../../hooks/useHandleSidebar";
 
 const Sidebar = () =>{
-    const [isOpen, setIsOpen] = useState(true);
-    const toggle = () => {
-      setIsOpen(!isOpen)
-    }
+    const {isExpanded, toggle, autoCloseSidebar, autoOpenSidebar} = useHandleSidebar()
+
+    useEffect(() => {
+        localStorage.setItem("isExpanded",JSON.stringify(isExpanded));
+
+        const handleResize = () => {
+            if(window.innerWidth <= 1300){
+                autoCloseSidebar()
+            }
+            else{
+                autoOpenSidebar()
+            }
+        }
+        window.addEventListener('resize', handleResize)
+
+        // cleanup this component
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    });
+
+
+
 
 
     return (
         <>
-            <div id={isOpen ? "sidebar" : "sidebar-mobile"}>
+            <div id={isExpanded ? "sidebar" : "sidebar-mobile"}>
                 <header id="header">
                     <div className="title">
                         <h1>Sedap
@@ -31,96 +51,145 @@ const Sidebar = () =>{
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-home-alt icons"></i>
-                                <span>Dashboard</span>
+                                <div className="icons">
+                                    <i className="bx bx-home-alt"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Dashboard</h2>
+                                </div>
+
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-align-left icons"></i>
-                                <span>Order List</span>
+                                <div className="icons">
+                                    <i className="bx bx-align-left icons"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Order List</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-note icons"></i>
-                                <span>Order Detail</span>
+                                <div className="icons">
+                                    <i className="bx bx-note icons"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Order Detail</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-male-female icons"></i>
-                                <span>Customer</span>
+                                <div className="icons">
+                                    <i className="bx bx-male-female icons"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Customer</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-bar-chart icons"></i>
-                                <span>Analytics</span>
+                                <div className="icons">
+                                    <i className="bx bx-bar-chart icons"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Analytics</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-pencil icons"></i>
-                                <span>Reviews</span>
+                                <div className="icons">
+                                    <i className="bx bx-pencil icons"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Reviews</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-coffee icons"></i>
-                                <span>Foods</span>
+                                <div className="icons">
+                                    <i className="bx bx-coffee icons"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Foods</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-edit icons"></i>
-                                <span>Food Detail</span>
+                                <div className="icons">
+                                    <i className="bx bx-edit icons"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Food Detail</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-user icons"></i>
-                                <span>Customer Detail</span>
+                                <div className="icons">
+                                    <i className="bx bx-user icons"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Customer Detail</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className="bx bx-calendar-event icons"></i>
-                                <span>Calendar</span>
+                                <div className="icons">
+                                    <i className="bx bx-calendar-event icons"></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Calendar</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className='bx bx-message-square-dots icons'></i>
-                                <span>Chat</span>
+                                <div className="icons">
+                                    <i className='bx bx-message-square-dots icons'></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Chat</h2>
+                                </div>
                             </a>
                         </li>
                         <li>
                             <a href="https://bing.com"
                                className="link-name"
                             >
-                                <i className='bx bx-wallet-alt icons'></i>
-                                <span>Wallet</span>
+                                <div className="icons">
+                                    <i className='bx bx-wallet-alt icons'></i>
+                                </div>
+                                <div className="float-text">
+                                    <h2>Wallet</h2>
+                                </div>
                             </a>
                         </li>
                     </ul>
