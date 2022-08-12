@@ -1,0 +1,41 @@
+
+h1{
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #333333;
+}
+
+h2{
+  font-family: "Barlow",sans-serif;
+  font-weight: 600;
+}
+
+h3{
+  font-family: "Barlow",sans-serif;
+  font-weight: 500;
+}
+
+button[type="button"]{
+  all:unset;
+  display: inline-block;
+  background-color: white;
+  border-radius: 12px;
+  padding: 5px 20px;
+  border: 1.8px solid #2C9CDB;
+  transform: scale(1);
+  color: #2C9CDB;
+  transition: transform ease-in-out 250ms, box-shadow ease-in-out 250ms;
+  font-family: Barlow,sans-serif;
+  font-weight: 700;
+}
+
+button[type="button"]:active{
+  transform: scale(0.955);
+}
+
+button[type="button"]:hover{
+  color: white;
+  background-color: #2C9CDB;
+  transition: ease-in-out 250ms;
+  cursor: pointer;
+}

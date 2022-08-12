@@ -22,7 +22,7 @@ export const useHandleSidebar = () => {
     }
 
     const autoOpenSidebar = () => {
-        setIsExpanded(true)
+        //setIsExpanded(true)
     }
 
     return {

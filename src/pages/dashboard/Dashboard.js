@@ -1,6 +1,13 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import './base-dashboard.scss'
+import evaluate from "../../assets/images/evaluar.png"
+import fail from "../../assets/images/fallar.png"
+import values from "../../assets/images/empatia.png"
+import delivery from "../../assets/images/firmar.png"
+import OrderChart from "./charts/OrderChart";
+import RevenueChart from "./charts/RevenueChart";
+//import OrderChart from "../../components/sidebar/charts/OrderChart";
 
 const Dashboard = () =>{
 
@@ -49,6 +56,126 @@ const Dashboard = () =>{
                     </div>
 
                 </header>
+                <div id="content-dashboard">
+                    <div id="summary-boxes">
+                        <div className="box-content">
+                            <div className="circle-icon">
+                                <img src={evaluate} alt="icon-evaluate"/>
+                            </div>
+                            <div className="box-content-text">
+                                <h1>75</h1>
+                                <h2>Total Orders</h2>
+                                <div className="text-percentage">
+                                    <div className="circle-icon-little">
+                                        <i className='bx bx-up-arrow-alt'></i>
+                                    </div>
+                                    <h3>4% (30 days)</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="box-content">
+                            <div className="circle-icon">
+                                <img src={delivery} alt="icon-evaluate"/>
+                            </div>
+                            <div className="box-content-text">
+                                <h1>357</h1>
+                                <h2>Total Delivered</h2>
+                                <div className="text-percentage">
+                                    <div className="circle-icon-little">
+                                        <i className='bx bx-up-arrow-alt'></i>
+                                    </div>
+                                    <h3>4% (30 days)</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className="box-content">
+
+                            <div className="circle-icon">
+                                <img src={fail} alt="icon-evaluate"/>
+                            </div>
+                            <div className="box-content-text">
+                                <h1>65</h1>
+                                <h2>Total Canceled</h2>
+                                <div className="text-percentage">
+                                    <div className="circle-icon-little bad-result">
+                                        <i className='bx bx-down-arrow-alt'></i>
+                                    </div>
+                                    <h3>25% (30 days)</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className="box-content">
+                            <div className="circle-icon">
+                                <img src={values} alt="icon-evaluate"/>
+                            </div>
+                            <div className="box-content-text">
+                                <h1>$128</h1>
+                                <h2>Total Revenue</h2>
+                                <div className="text-percentage">
+                                    <div className="circle-icon-little bad-result">
+                                        <i className='bx bx-down-arrow-alt'></i>
+                                    </div>
+                                    <h3>12% (30 days)</h3>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div id="canvas-order">
+                        <div className="header-chart">
+                            <span>
+                                <h2>Chart Order</h2>
+                                <h3>Lorem ipsum dolor sit amelt, consectetur adip</h3>
+                            </span>
+                            <button type="button"
+                            >
+                                <div className="button-content">
+                                    <i className="bx bx-download"></i>
+                                    <h2>Save Report</h2>
+                                </div>
+                            </button>
+                        </div>
+                        <div className="chart-container">
+                            <OrderChart></OrderChart>
+                        </div>
+                    </div>
+                    <div id="canvas-responsive">
+                        <div className="canvas-revenue">
+                            <div className="header-chart">
+                                <h2>Total Revenue</h2>
+                                <div className="legend">
+                                    <div id="past-year"></div>
+                                    <h3>2020</h3>
+                                    <div id="current-year"></div>
+                                    <h3>2021</h3>
+                                </div>
+                            </div>
+                            <div className="chart-container">
+                                <RevenueChart></RevenueChart>
+                            </div>
+
+                        </div>
+                        <div className="canvas-customer">
+                            <div className="header-chart">
+                                <h2>Total Revenue</h2>
+                                <div className="legend">
+                                    <div id="past-year"></div>
+                                    <h3>2020</h3>
+                                    <div id="current-year"></div>
+                                    <h3>2021</h3>
+                                </div>
+                            </div>
+                            <div className="chart-container">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 

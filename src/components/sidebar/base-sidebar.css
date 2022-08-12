@@ -14,6 +14,31 @@ h3 {
   font-weight: 500;
 }
 
+button[type=button] {
+  all: unset;
+  display: inline-block;
+  background-color: white;
+  border-radius: 12px;
+  padding: 5px 20px;
+  border: 1.8px solid #2C9CDB;
+  transform: scale(1);
+  color: #2C9CDB;
+  transition: transform ease-in-out 250ms, box-shadow ease-in-out 250ms;
+  font-family: Barlow, sans-serif;
+  font-weight: 700;
+}
+
+button[type=button]:active {
+  transform: scale(0.955);
+}
+
+button[type=button]:hover {
+  color: white;
+  background-color: #2C9CDB;
+  transition: ease-in-out 250ms;
+  cursor: pointer;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,162 +49,166 @@ body {
 }
 
 #sidebar {
-  width: 325px;
+  min-width: 325px;
   min-height: 950px;
-  height: auto;
   background-color: #FFFFFF;
   box-shadow: 2px 0 10px rgba(204, 204, 204, 0.368627451);
   transition: all 500ms ease;
 }
-#sidebar #header {
+#sidebar #content-fixed {
+  position: fixed;
+}
+#sidebar #content-fixed #header {
   height: 152px;
   width: 325px;
 }
-#sidebar #header .title {
+#sidebar #content-fixed #header .title {
   display: flex;
   flex-direction: row;
   margin-left: 50px;
   padding-top: 35px;
   transition: all 300ms;
 }
-#sidebar #header .title h1 {
+#sidebar #content-fixed #header .title h1 {
   font-size: 45px;
 }
-#sidebar #header .title h1 span {
+#sidebar #content-fixed #header .title h1 span {
   color: #20ba86;
 }
-#sidebar #header .title #btn {
+#sidebar #content-fixed #header .title #btn {
   margin-top: 15px;
   margin-left: 50px;
   font-size: 40px;
   transition: all 300ms ease;
 }
-#sidebar #header .title #btn:hover {
+#sidebar #content-fixed #header .title #btn:hover {
   color: #20ba86;
   cursor: pointer;
 }
-#sidebar #header h3 {
+#sidebar #content-fixed #header h3 {
   font-size: 17px;
   color: #babac0;
   margin-left: 50px;
   padding-top: 10px;
 }
-#sidebar #aside {
+#sidebar #content-fixed #aside {
   margin-top: 30px;
   height: 710px;
 }
-#sidebar #aside #nav-list {
+#sidebar #content-fixed #aside #nav-list {
   margin-left: 50px;
   margin-right: 50px;
   list-style: none;
 }
-#sidebar #aside #nav-list li {
+#sidebar #content-fixed #aside #nav-list li {
   width: 225px;
   height: 50px;
   line-height: 45px;
   margin: 10px 0;
 }
-#sidebar #aside #nav-list li .link-name {
+#sidebar #content-fixed #aside #nav-list li .link-name {
   text-decoration: none;
   display: flex;
   padding-left: 20px;
   color: black;
 }
-#sidebar #aside #nav-list li .link-name .icons {
+#sidebar #content-fixed #aside #nav-list li .link-name .icons {
   margin-top: 2px;
   font-size: 20px;
   transition: all 1000ms ease;
 }
-#sidebar #aside #nav-list li .link-name .float-text h2 {
+#sidebar #content-fixed #aside #nav-list li .link-name .float-text h2 {
   padding-left: 20px;
   font-weight: 600;
   font-size: 16px;
   color: #747280;
 }
-#sidebar #aside #nav-list li:hover {
+#sidebar #content-fixed #aside #nav-list li:hover {
   background-color: #d9f3ea;
   border-radius: 10px;
   transition: all 300ms;
 }
-#sidebar #aside #nav-list li:hover .link-name {
+#sidebar #content-fixed #aside #nav-list li:hover .link-name {
   color: #20ba86;
 }
-#sidebar #aside #nav-list li:hover .link-name .float-text h2 {
+#sidebar #content-fixed #aside #nav-list li:hover .link-name .float-text h2 {
   color: #20ba86;
   font-weight: 700;
 }
 
 #sidebar-mobile {
-  width: 75px;
+  min-width: 75px;
   min-height: 950px;
-  height: auto;
   background-color: #FFFFFF;
   box-shadow: 2px 0 10px rgba(204, 204, 204, 0.368627451);
   transition: all 1000ms ease;
 }
-#sidebar-mobile #header {
+#sidebar-mobile #content-fixed {
+  position: fixed;
+}
+#sidebar-mobile #content-fixed #header {
   height: 152px;
   width: 100%;
 }
-#sidebar-mobile #header .title {
+#sidebar-mobile #content-fixed #header .title {
   width: 100%;
   padding-top: 35px;
 }
-#sidebar-mobile #header .title h1 {
+#sidebar-mobile #content-fixed #header .title h1 {
   display: none;
 }
-#sidebar-mobile #header .title #btn {
+#sidebar-mobile #content-fixed #header .title #btn {
   margin-top: 15px;
-  margin-left: 15px;
+  margin-left: 18px;
   font-size: 40px;
   transition: all 1000ms ease;
 }
-#sidebar-mobile #header .title #btn:hover {
+#sidebar-mobile #content-fixed #header .title #btn:hover {
   color: #20ba86;
   cursor: pointer;
 }
-#sidebar-mobile #header h3 {
+#sidebar-mobile #content-fixed #header h3 {
   display: none;
 }
-#sidebar-mobile #aside {
+#sidebar-mobile #content-fixed #aside {
   height: 788px;
 }
-#sidebar-mobile #aside #nav-list {
+#sidebar-mobile #content-fixed #aside #nav-list {
   margin-left: 10px;
-  margin-right: 10px;
   list-style: none;
 }
-#sidebar-mobile #aside #nav-list li {
+#sidebar-mobile #content-fixed #aside #nav-list li {
   width: 55px;
   height: 50px;
   line-height: 50px;
   margin: 10px 0;
 }
-#sidebar-mobile #aside #nav-list li .link-name {
+#sidebar-mobile #content-fixed #aside #nav-list li .link-name {
   text-decoration: none;
   display: flex;
   padding-left: 12px;
   color: black;
 }
-#sidebar-mobile #aside #nav-list li .link-name .icons {
+#sidebar-mobile #content-fixed #aside #nav-list li .link-name .icons {
   margin-top: 3px;
   font-size: 30px;
   transition: all 1000ms ease;
 }
-#sidebar-mobile #aside #nav-list li .link-name .float-text {
+#sidebar-mobile #content-fixed #aside #nav-list li .link-name .float-text {
   position: absolute;
   margin-top: 6px;
-  transform: translate(-125%, 0%);
+  transform: translate(-300%, 0%);
   margin-left: 65px;
   border-radius: 5px;
   height: 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-color: white;
   width: auto;
-  opacity: 0;
+  white-space: nowrap;
+  opacity: 1;
   transition: 0s;
 }
-#sidebar-mobile #aside #nav-list li .link-name .float-text h2 {
+#sidebar-mobile #content-fixed #aside #nav-list li .link-name .float-text h2 {
   padding: 0 10px;
   line-height: 40px;
   text-align: center;
@@ -187,19 +216,20 @@ body {
   font-size: 18px;
   color: #747280;
 }
-#sidebar-mobile #aside #nav-list li:hover {
+#sidebar-mobile #content-fixed #aside #nav-list li:hover {
   background-color: #d9f3ea;
   border-radius: 10px;
   transition: all 300ms;
 }
-#sidebar-mobile #aside #nav-list li:hover .link-name {
+#sidebar-mobile #content-fixed #aside #nav-list li:hover .link-name {
   color: #20ba86;
 }
-#sidebar-mobile #aside #nav-list li:hover .link-name .float-text {
+#sidebar-mobile #content-fixed #aside #nav-list li:hover .link-name .float-text {
   animation-name: down-transition;
   animation-duration: 300ms;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
+  width: auto;
 }
 
 @keyframes down-transition {
