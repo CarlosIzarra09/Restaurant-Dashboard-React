@@ -17,10 +17,14 @@
     width: 100%;
     height: auto;
     padding: 20px 40px 0 40px;
+  }
+}
 
-
-
-
+@media (max-width: 550px){
+  #website{
+    #panel{
+      padding: 20px 20px 0 20px;
+    }
   }
 }
 

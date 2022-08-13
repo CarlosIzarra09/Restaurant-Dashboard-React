@@ -422,4 +422,10 @@ button[type=button]:hover {
   padding: 20px 40px 0 40px;
 }
 
+@media (max-width: 550px) {
+  #website #panel {
+    padding: 20px 20px 0 20px;
+  }
+}
+
 /*# sourceMappingURL=base-dashboard.css.map */

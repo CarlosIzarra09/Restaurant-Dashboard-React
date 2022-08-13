@@ -139,6 +139,9 @@ body{
   background-color: #FFFFFF;
   box-shadow: 2px 0 10px #CCCCCC5E;
   transition: all 1000ms ease;
+  position:relative;
+
+
 
   #content-fixed::-webkit-scrollbar{
     background: transparent;
@@ -146,9 +149,14 @@ body{
 
   #content-fixed{
     top: 0;
-    bottom:0;
-    position: fixed;
-    overflow-y: scroll;
+    left: 0;
+    bottom: 0;
+    //position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    //overflow: hidden;
+
     #header{
       height: 152px;
       width: 100%;
@@ -181,7 +189,7 @@ body{
     }
 
     #aside{
-      height:788px;;
+      height:788px;
 
       #nav-list{
         margin-left: 10px;
@@ -211,8 +219,8 @@ body{
             .float-text{
               position:absolute;
               margin-top: 6px;
-              transform: translate(-300%,0%);
-              margin-left: 65px;
+              transform: translate(-200px,0%);
+              //margin-left: 65px;
               border-radius: 5px;
               height: 40px;
               box-shadow: 0 5px 10px #00000033;
@@ -278,15 +286,15 @@ body{
 
 @keyframes down-transition {
   0%{
-    transform: translate(-125%,-50%);
+    transform: translate(-200px,-50%);
     opacity: 0;
   }
   50%{
-    transform: translate(0%,-50%);
+    transform: translate(70px,-50%);
     opacity: 0;
   }
   100%{
-    transform: translate(0%,0%);
+    transform: translate(70px,0px);
     opacity: 1;
   }
 }

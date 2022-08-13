@@ -142,15 +142,17 @@ body {
   background-color: #FFFFFF;
   box-shadow: 2px 0 10px rgba(204, 204, 204, 0.368627451);
   transition: all 1000ms ease;
+  position: relative;
 }
 #sidebar-mobile #content-fixed::-webkit-scrollbar {
   background: transparent;
 }
 #sidebar-mobile #content-fixed {
   top: 0;
+  left: 0;
   bottom: 0;
-  position: fixed;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 #sidebar-mobile #content-fixed #header {
   height: 152px;
@@ -203,8 +205,7 @@ body {
 #sidebar-mobile #content-fixed #aside #nav-list li .link-name .float-text {
   position: absolute;
   margin-top: 6px;
-  transform: translate(-300%, 0%);
-  margin-left: 65px;
+  transform: translate(-200px, 0%);
   border-radius: 5px;
   height: 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -240,15 +241,15 @@ body {
 
 @keyframes down-transition {
   0% {
-    transform: translate(-125%, -50%);
+    transform: translate(-200px, -50%);
     opacity: 0;
   }
   50% {
-    transform: translate(0%, -50%);
+    transform: translate(70px, -50%);
     opacity: 0;
   }
   100% {
-    transform: translate(0%, 0%);
+    transform: translate(70px, 0px);
     opacity: 1;
   }
 }
