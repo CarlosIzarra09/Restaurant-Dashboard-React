@@ -50,8 +50,8 @@ const options = {
 
     layout:{
         padding:{
-            left:50,
-            right:50
+            left:25,
+            right:25
         },
 
 
@@ -106,10 +106,10 @@ const options = {
     tension:0.3,
     borderColor: "#2C9CDB",
 
-    pointRadius:9,
+    pointRadius:6,
     pointBorderColor: "#f6f5f5",
     pointBackgroundColor: "#2C9CDB",
-    pointBorderWidth: 4,
+    pointBorderWidth: 0,
     pointHoverRadius:6,
     pointHoverBorderWidth:2,
 

@@ -64,6 +64,7 @@ button[type=button]:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 550px;
 }
 #header-dashboard #header-container .content-fix .content-lapse {
@@ -101,7 +102,6 @@ button[type=button]:hover {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 10px;
   width: 230px;
   height: 50px;
   border-left: 1px solid #B7B7B7;
@@ -128,11 +128,14 @@ button[type=button]:hover {
 }
 
 @media (max-width: 1050px) {
+  #header-dashboard #header-container {
+    flex-direction: column;
+    gap: 30px;
+  }
   #header-dashboard #header-container .content-welcome {
     width: 100%;
   }
   #header-dashboard #header-container .content-fix {
-    margin-top: 30px;
     width: 100%;
     justify-content: space-between;
   }
@@ -141,9 +144,9 @@ button[type=button]:hover {
   #header-dashboard #header-container .content-fix {
     display: flex;
     flex-direction: column;
+    gap: 20px;
   }
   #header-dashboard #header-container .content-fix .content-lapse {
-    margin-top: 20px;
     width: 100%;
     order: 3;
   }
@@ -240,7 +243,8 @@ button[type=button]:hover {
 }
 #content-dashboard #canvas-order {
   width: 100%;
-  height: 300px;
+  min-height: 300px;
+  height: auto;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 2px rgba(204, 204, 204, 0.368627451);
@@ -253,6 +257,7 @@ button[type=button]:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 20px;
 }
 #content-dashboard #canvas-order .header-chart span h2 {
   font-size: 20px;
@@ -268,6 +273,7 @@ button[type=button]:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 #content-dashboard #canvas-order .header-chart button .button-content h2 {
@@ -279,7 +285,8 @@ button[type=button]:hover {
 }
 #content-dashboard #canvas-order .chart-container {
   margin-top: 20px;
-  height: 65%;
+  padding-bottom: 20px;
+  height: 190px;
 }
 #content-dashboard #canvas-responsive {
   display: flex;
@@ -373,13 +380,30 @@ button[type=button]:hover {
 }
 @media (max-width: 710px) {
   #content-dashboard #summary-boxes {
-    width: 100%;
+    flex-direction: column;
   }
   #content-dashboard #summary-boxes .box-content {
     width: 100%;
   }
   #content-dashboard #summary-boxes .box-content .box-content-text {
     margin-left: 50px;
+  }
+}
+@media (max-width: 550px) {
+  #content-dashboard #canvas-order .header-chart {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #content-dashboard #canvas-responsive .header-chart {
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+  }
+  #content-dashboard #canvas-responsive .header-chart .legend {
+    align-self: center;
+  }
+  #content-dashboard #canvas-responsive .canvas-revenue .chart-container {
+    height: 65%;
   }
 }
 .chart-position {

@@ -37,8 +37,8 @@ const options = {
 
     layout:{
         padding:{
-            left:50,
-            right:50
+            left:25,
+            right:25
         },
 
 

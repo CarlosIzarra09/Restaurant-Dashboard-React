@@ -16,6 +16,7 @@ body{
   box-shadow: 2px 0 10px #CCCCCC5E;
   transition: all 500ms ease;
 
+
   #content-fixed{
     position: fixed;
     #header{
@@ -139,8 +140,15 @@ body{
   box-shadow: 2px 0 10px #CCCCCC5E;
   transition: all 1000ms ease;
 
+  #content-fixed::-webkit-scrollbar{
+    background: transparent;
+  }
+
   #content-fixed{
+    top: 0;
+    bottom:0;
     position: fixed;
+    overflow-y: scroll;
     #header{
       height: 152px;
       width: 100%;

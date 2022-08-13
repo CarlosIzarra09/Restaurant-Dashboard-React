@@ -143,8 +143,14 @@ body {
   box-shadow: 2px 0 10px rgba(204, 204, 204, 0.368627451);
   transition: all 1000ms ease;
 }
+#sidebar-mobile #content-fixed::-webkit-scrollbar {
+  background: transparent;
+}
 #sidebar-mobile #content-fixed {
+  top: 0;
+  bottom: 0;
   position: fixed;
+  overflow-y: scroll;
 }
 #sidebar-mobile #content-fixed #header {
   height: 152px;
