@@ -23,6 +23,7 @@
       background-color: white;
       height: 150px;
       width: 300px;
+      gap: 20px;
 
       .circle-icon{
         background-color: #D9F3EA;
@@ -36,7 +37,7 @@
       }
 
       .box-content-text{
-        margin-left: 20px;
+        //margin-left: 20px;
         h1{
           font-size: 35px;
           height: 46px;
@@ -281,9 +282,7 @@
       flex-direction: column;
         .box-content{
           width: 100%;
-          .box-content-text{
-            margin-left: 50px;
-          }
+          gap:10%;
         }
     }
   }

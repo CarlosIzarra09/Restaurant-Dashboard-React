@@ -214,6 +214,7 @@ body {
   white-space: nowrap;
   opacity: 1;
   transition: 0s;
+  z-index: 2;
 }
 #sidebar-mobile #content-fixed #aside #nav-list li .link-name .float-text h2 {
   padding: 0 10px;

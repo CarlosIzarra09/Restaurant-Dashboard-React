@@ -193,6 +193,7 @@ button[type=button]:hover {
   background-color: white;
   height: 150px;
   width: 300px;
+  gap: 20px;
 }
 #content-dashboard #summary-boxes .box-content .circle-icon {
   background-color: #D9F3EA;
@@ -202,9 +203,6 @@ button[type=button]:hover {
 }
 #content-dashboard #summary-boxes .box-content .circle-icon img {
   width: 100%;
-}
-#content-dashboard #summary-boxes .box-content .box-content-text {
-  margin-left: 20px;
 }
 #content-dashboard #summary-boxes .box-content .box-content-text h1 {
   font-size: 35px;
@@ -384,9 +382,7 @@ button[type=button]:hover {
   }
   #content-dashboard #summary-boxes .box-content {
     width: 100%;
-  }
-  #content-dashboard #summary-boxes .box-content .box-content-text {
-    margin-left: 50px;
+    gap: 10%;
   }
 }
 @media (max-width: 550px) {
@@ -408,6 +404,7 @@ button[type=button]:hover {
 }
 .chart-position {
   position: absolute;
+  z-index: 1;
 }
 
 #website {
