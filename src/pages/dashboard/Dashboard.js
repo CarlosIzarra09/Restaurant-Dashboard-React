@@ -7,6 +7,7 @@ import values from "../../assets/images/empatia.png"
 import delivery from "../../assets/images/firmar.png"
 import OrderChart from "./charts/OrderChart";
 import RevenueChart from "./charts/RevenueChart";
+import CustomerBarChart from "./charts/CustomerBarChart";
 //import OrderChart from "../../components/sidebar/charts/OrderChart";
 
 const Dashboard = () =>{
@@ -160,15 +161,22 @@ const Dashboard = () =>{
                         </div>
                         <div className="canvas-customer">
                             <div className="header-chart">
-                                <h2>Total Revenue</h2>
-                                <div className="legend">
-                                    <div id="past-year"></div>
-                                    <h3>2020</h3>
-                                    <div id="current-year"></div>
-                                    <h3>2021</h3>
+                                <h2>Customer Map</h2>
+                                {/*
+                                */}
+                                <div className="actions">
+                                    <button type="button"
+                                    >
+                                        <div className="button-content">
+
+                                            <h2>Daily</h2>
+                                            <i className="bx bx-caret-down"></i>
+                                        </div>
+                                    </button>
                                 </div>
                             </div>
                             <div className="chart-container">
+                                <CustomerBarChart></CustomerBarChart>
 
                             </div>
                         </div>

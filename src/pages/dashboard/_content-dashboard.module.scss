@@ -123,24 +123,10 @@
         }
       }
 
-      button{
+      /*button[type="button"]{
 
-        .button-content{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          h2{
-            font-size: 14px;
-            font-weight: 700;
-          }
 
-          .bx{
-            font-size: 24px;
-          }
-        }
-      }
+      }*/
     }
 
     .chart-container{
@@ -174,8 +160,10 @@
       padding-left: 50px;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
+      gap:15px;
+      height: auto;
 
       h2{
         font-size: 20px;
@@ -187,6 +175,9 @@
         display: flex;
         flex-direction: row;
         gap: 10px;
+        align-items: center;
+        height: 24px;
+
 
         h3{
           margin-top: 2px;
@@ -209,6 +200,32 @@
         }
       }
 
+      .actions{
+        //display: flex;
+        //flex-direction: row;
+        button[type="button"]{
+          border: 1.8px solid #747280;
+          .button-content{
+            h2{
+              color: #333333;
+              font-weight: 600;
+            }
+            .bx{
+              color: #FF5B5A;
+            }
+
+          }
+
+        }
+
+        button[type="button"]:hover {
+          background-color: #FF5B5A;
+        }
+
+
+
+      }
+
 
     }
 
@@ -225,6 +242,11 @@
       border-radius: 10px;
       box-shadow: 0 4px 2px #CCCCCC5E;
       background-color: white;
+
+      .chart-container{
+        margin-top: 30px;
+        height: 73%;
+      }
     }
   }
 
@@ -300,9 +322,17 @@
       .header-chart{
         flex-direction: column;
         gap: 10px;
-        align-items: start;
+        align-items: flex-start;
         .legend{
           align-self: center;
+        }
+        .actions{
+          width: 100%;
+
+          button[type="button"]{
+            width: 85%;
+
+          }
         }
       }
 
@@ -311,6 +341,12 @@
           height: 65%;
         }
 
+      }
+
+      .canvas-customer{
+        .chart-container{
+          height: 62%;
+        }
       }
     }
   }

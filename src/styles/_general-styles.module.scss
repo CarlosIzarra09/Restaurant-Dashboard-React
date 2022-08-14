@@ -23,10 +23,27 @@ button[type="button"]{
   padding: 5px 20px;
   border: 1.8px solid #2C9CDB;
   transform: scale(1);
-  color: #2C9CDB;
   transition: transform ease-in-out 250ms, box-shadow ease-in-out 250ms;
   font-family: Barlow,sans-serif;
   font-weight: 700;
+
+  .button-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    h2{
+      color: #2C9CDB;
+      font-size: 14px !important;
+      font-weight: 700;
+    }
+
+    .bx{
+      color: #2C9CDB;
+      font-size: 22px !important;
+    }
+  }
 }
 
 button[type="button"]:active{
@@ -34,8 +51,13 @@ button[type="button"]:active{
 }
 
 button[type="button"]:hover{
-  color: white;
   background-color: #2C9CDB;
   transition: ease-in-out 250ms;
   cursor: pointer;
+  h2{
+    color: white !important;
+  }
+  .bx{
+    color: white !important;
+  }
 }

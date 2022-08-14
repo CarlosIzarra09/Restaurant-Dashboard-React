@@ -22,10 +22,25 @@ button[type=button] {
   padding: 5px 20px;
   border: 1.8px solid #2C9CDB;
   transform: scale(1);
-  color: #2C9CDB;
   transition: transform ease-in-out 250ms, box-shadow ease-in-out 250ms;
   font-family: Barlow, sans-serif;
   font-weight: 700;
+}
+button[type=button] .button-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+button[type=button] .button-content h2 {
+  color: #2C9CDB;
+  font-size: 14px !important;
+  font-weight: 700;
+}
+button[type=button] .button-content .bx {
+  color: #2C9CDB;
+  font-size: 22px !important;
 }
 
 button[type=button]:active {
@@ -33,10 +48,15 @@ button[type=button]:active {
 }
 
 button[type=button]:hover {
-  color: white;
   background-color: #2C9CDB;
   transition: ease-in-out 250ms;
   cursor: pointer;
+}
+button[type=button]:hover h2 {
+  color: white !important;
+}
+button[type=button]:hover .bx {
+  color: white !important;
 }
 
 #header-dashboard {
@@ -256,6 +276,10 @@ button[type=button]:hover {
   flex-direction: row;
   justify-content: space-between;
   gap: 20px;
+  /*button[type="button"]{
+
+
+  }*/
 }
 #content-dashboard #canvas-order .header-chart span h2 {
   font-size: 20px;
@@ -266,20 +290,6 @@ button[type=button]:hover {
   margin-top: 2px;
   font-size: 13px;
   color: #babac0;
-}
-#content-dashboard #canvas-order .header-chart button .button-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-#content-dashboard #canvas-order .header-chart button .button-content h2 {
-  font-size: 14px;
-  font-weight: 700;
-}
-#content-dashboard #canvas-order .header-chart button .button-content .bx {
-  font-size: 24px;
 }
 #content-dashboard #canvas-order .chart-container {
   margin-top: 20px;
@@ -307,8 +317,10 @@ button[type=button]:hover {
   padding-left: 50px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 15px;
+  height: auto;
 }
 #content-dashboard #canvas-responsive .header-chart h2 {
   font-size: 20px;
@@ -319,6 +331,8 @@ button[type=button]:hover {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  align-items: center;
+  height: 24px;
 }
 #content-dashboard #canvas-responsive .header-chart .legend h3 {
   margin-top: 2px;
@@ -337,6 +351,19 @@ button[type=button]:hover {
   height: 15px;
   border-radius: 99%;
 }
+#content-dashboard #canvas-responsive .header-chart .actions button[type=button] {
+  border: 1.8px solid #747280;
+}
+#content-dashboard #canvas-responsive .header-chart .actions button[type=button] .button-content h2 {
+  color: #333333;
+  font-weight: 600;
+}
+#content-dashboard #canvas-responsive .header-chart .actions button[type=button] .button-content .bx {
+  color: #FF5B5A;
+}
+#content-dashboard #canvas-responsive .header-chart .actions button[type=button]:hover {
+  background-color: #FF5B5A;
+}
 #content-dashboard #canvas-responsive .chart-container {
   margin-top: 30px;
   height: 75%;
@@ -347,6 +374,10 @@ button[type=button]:hover {
   border-radius: 10px;
   box-shadow: 0 4px 2px rgba(204, 204, 204, 0.368627451);
   background-color: white;
+}
+#content-dashboard #canvas-responsive .canvas-customer .chart-container {
+  margin-top: 30px;
+  height: 73%;
 }
 
 @media (max-width: 1111px) {
@@ -393,13 +424,22 @@ button[type=button]:hover {
   #content-dashboard #canvas-responsive .header-chart {
     flex-direction: column;
     gap: 10px;
-    align-items: start;
+    align-items: flex-start;
   }
   #content-dashboard #canvas-responsive .header-chart .legend {
     align-self: center;
   }
+  #content-dashboard #canvas-responsive .header-chart .actions {
+    width: 100%;
+  }
+  #content-dashboard #canvas-responsive .header-chart .actions button[type=button] {
+    width: 85%;
+  }
   #content-dashboard #canvas-responsive .canvas-revenue .chart-container {
     height: 65%;
+  }
+  #content-dashboard #canvas-responsive .canvas-customer .chart-container {
+    height: 62%;
   }
 }
 .chart-position {

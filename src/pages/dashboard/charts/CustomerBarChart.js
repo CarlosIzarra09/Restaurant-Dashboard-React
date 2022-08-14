@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Line} from "react-chartjs-2";
+import {Bar} from "react-chartjs-2";
 import './_canvas-chart.module.scss'
 
 import {
@@ -8,7 +8,7 @@ import {
     Filler,
     Legend,
     LinearScale,
-    LineElement,
+    BarElement,
     PointElement,
     Title,
     Tooltip
@@ -19,38 +19,34 @@ ChartJS.register(
     CategoryScale,
     LinearScale,
     PointElement,
-    LineElement,
+    BarElement,
     Title,
     Tooltip,
     Legend,
     Filler
 );
 
-const scores = [10000,13000,27000,15000,25000,32000,12000,5000,7000,18000,1000,7000];
-const scores2 = [9000,15000,22000,17000,14000,15000,11000,5000,7000,9000,4000,5000];
-const labels = ['Jan','Feb','Mar','Apr','May','June','Jul','Aug','Sep','Oct','Nov','Dic']
+const scores = [60,80,40,70,60,30,60];
+const scores2 = [50,90,50,70,35,45,75];
+const labels = ['Mon','Thu','Wed','Tue','Fri','Sat','Sun']
 
 
 const options = {
     responsive:true,
     maintainAspectRatio: false,
+    barThickness:'flex',
+    maxBarThickness:15,
+
 
     layout:{
         padding:{
             left:25,
             right:25
         },
-
-
     },
     scales: {
         y:{
             min:0,
-            ticks: {
-                callback: (value, index, values) => {
-                    return `$ ${value/1000}k`;
-                }
-            },
             grid:{
                 display: false
             }
@@ -76,7 +72,9 @@ const options = {
             callbacks:{
                 title: (context) => {
                     //console.log(context[0])
-                    return `$ ${context[0].formattedValue}`
+                    if(context[0].datasetIndex === 0) return `${context[0].formattedValue} women`;
+                    else
+                        return `${context[0].formattedValue} men`;
                 },
                 label: (context)=>{
                     return null;
@@ -94,16 +92,9 @@ const options = {
     },
     tension:0.5,
 
-
-    pointRadius:12,
-    pointBorderWidth:0.1,
-    pointBackgroundColor: "rgba(0,0,0,0)",
-    pointHoverRadius:6,
-    pointHoverBorderWidth:0,
-
 }
 
-export const RevenueChart = () => {
+export const CustomerBarChart = () => {
     const [chartData, setChartData] = useState({
         datasets: []
     });
@@ -114,18 +105,17 @@ export const RevenueChart = () => {
         setChartData({
             datasets: [
                 {
-                    label: 'Chart Revenue 2020',
+                    label: 'Chart women 2020',
                     data: scores,
-                    borderColor: "#2C9CDB",
-                    pointBorderColor: "#DFF0FA",
-                    pointHoverBackgroundColor: "#2C9CDB"
+                    borderColor: "#F7C705",
+                    backgroundColor: "#F7C705"
+
                 },
                 {
-                    label: 'Chart Revenue 2021',
+                    label: 'Chart men 2020',
                     data:scores2,
                     borderColor: "#FF5B5A",
-                    pointBorderColor: "#FFE6E7",
-                    pointHoverBackgroundColor: "#FF5B5A",
+                    backgroundColor: "#FF5B5A"
                 }
             ],
             labels: labels
@@ -134,8 +124,8 @@ export const RevenueChart = () => {
 
 
     return(
-        <Line data={chartData} options={options} className="chart-position"></Line>
+        <Bar data={chartData} options={options} className="chart-position"/>
     );
 }
 
-export default RevenueChart
+export default CustomerBarChart
